@@ -9,9 +9,12 @@ using LeaveOfAbsenceManagement.Web.Data;
 using AutoMapper;
 using LeaveOfAbsenceManagement.Web.Models;
 using LeaveOfAbsenceManagement.Web.Contracts;
+using Microsoft.AspNetCore.Authorization;
+using LeaveOfAbsenceManagement.Web.Constants;
 
 namespace LeaveOfAbsenceManagement.Web.Controllers
 {
+    [Authorize(Roles = Roles.Administrator)]
     public class LeaveTypesController : Controller
     {
         private readonly ILeaveTypeRepository leaveTypeRepository;
